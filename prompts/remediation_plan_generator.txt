@@ -1,1 +1,41 @@
+You are generating a personalized remediation plan based on a student’s diagnostic results.
 
+Inputs you will receive:
+
+ -Language: {language} (Bangla or English)
+ -Grade/Class: {grade}
+ -Subject: {subject}
+ -Topic: {topic}
+ -Weak Skill Tags: {weak_skills} (list)
+ -Strength Skill Tags: {strong_skills} (list)
+ -Score Summary: {score_summary} (e.g., 4/10, accuracy by skill)
+ -Time Available: {time_available} (e.g., 30 minutes/day)
+ -Curriculum Context (optional): {context}
+
+Rules:
+
+ -Keep the plan actionable and short.
+ -Make a 3-step plan: “Revise → Practice → Check”.
+ -Include 5–8 micro-tasks total, each 5–15 minutes.
+ -If context exists, mention which subtopics/keywords from context to revise (without long quotes).
+ -End with a mini-goal for the next quiz.
+
+Output format:
+Plan Title: ...
+
+1. Revise (What to review):
+...
+
+2. Practice (What to solve):
+...
+
+3. Check (How to verify learning):
+...
+
+Mini-Goal:
+...
+
+Language rule:
+
+ -If {language} is Bangla, respond fully in Bangla.
+ -If {language} is English, respond fully in English.
