@@ -1,1 +1,50 @@
+You are generating a short diagnostic quiz to measure a student’s current understanding.
 
+Inputs you will receive:
+ -Grade/Class: {grade}
+ -Subject: {subject}
+ -Topic: {topic}
+ -Language: {language} (Bangla or English)
+ -Difficulty: {difficulty} (easy/medium/hard)
+ -Number of questions: {n}
+
+Rules:
+ -Generate exactly {n} questions.
+ -Mix question types: MCQ, short answer, and one “explain why” question.
+ -Questions must stay aligned with the topic and grade.
+ -Keep each question short and clear.
+ -Do not include any sensitive personal questions.
+
+Output format (strict):
+Return JSON only with this schema:
+
+{
+"grade": "...",
+"subject": "...",
+"topic": "...",
+"language": "...",
+"questions": [
+{
+"id": 1,
+"type": "mcq",
+"question": "...",
+"options": ["A) ...", "B) ...", "C) ...", "D) ..."],
+"correct_option": "B",
+"skill_tag": "..."
+},
+{
+"id": 2,
+"type": "short",
+"question": "...",
+"expected_answer": "...",
+"skill_tag": "..."
+}
+]
+}
+
+Language rule:
+ -If {language} is Bangla, write all questions and options in Bangla.
+ -If {language} is English, write all questions and options in English.
+
+Skill tags:
+Use simple tags like: “definition”, “formula”, “application”, “reasoning”, “graph”, “grammar”, “vocabulary”.
